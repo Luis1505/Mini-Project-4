@@ -5,28 +5,41 @@ class Main {
   {
    Scanner scan = new Scanner (System.in);
 
-   System.out.println("have you brushed you teeth");
+   System.out.println("Have you brushed you teeth?");
    boolean brushedTeeth = scan.nextBoolean();
 
-   System.out.println("have you brush your hair?");
+   System.out.println("Have you brush your hair?");
    boolean brushedHair = scan.nextBoolean();
-   ready(brushedTeeth , brushedHair);
+   
+   System.out.println(ready(brushedTeeth , brushedHair));
 
-    System.out.println();
+   System.out.println("What temperature is it outside?");
+   int degrees = scan.nextInt();
+
+   System.out.println(temperature(degrees));
+
   }
   
-  static boolean ready(boolean brushedHair , boolean brushedTeeth)
+  static String ready(boolean brushedHair , boolean brushedTeeth)
   {
     if(brushedHair && brushedTeeth)
     {
-     System.out.println("You're good to go");
-     return  ready = true;
+     return "You're good to go";
     }else{
-      System.out.println("You're not ready yet");
-      return ready = false;
+       return "You're not ready yet";     
     }
   }
-  static 
+  static String temperature(int degrees)
+  {
+    if(degrees > 90)
+    {
+     return "It's way too hot!";
+    }else if(degrees > 62){
+      return "Its a perfect day to be out.";
+    }else{
+      return "Its a way too cold";
+    }
+  }
 
 
 
