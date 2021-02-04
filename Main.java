@@ -3,6 +3,9 @@ import java.util.Scanner;
 class Main {
   public static void main(String[] args) 
   {
+  
+  // introduced scanner for the methods
+   
    Scanner scan = new Scanner (System.in);
 
    System.out.println("Have you brushed you teeth?");
@@ -13,13 +16,15 @@ class Main {
    
    System.out.println(ready(brushedTeeth , brushedHair));
 
-   System.out.println("What temperature is it outside?");
+  // introduced the other method
+
+   System.out.println("What degrees farenheit is it outside?");
    int degrees = scan.nextInt();
 
-   System.out.println(temperature(degrees));
+   System.out.println("It is "+ temperature(degrees)  + " degrees  celsius outside.") ;
 
   }
-  
+  // first method is a boolean
   static String ready(boolean brushedHair , boolean brushedTeeth)
   {
     if(brushedHair && brushedTeeth)
@@ -29,18 +34,12 @@ class Main {
        return "You're not ready yet";     
     }
   }
-  static String temperature(int degrees)
+ // this method takes farenheit and changes it to celsius
+  static int temperature(int degrees)
   {
-    if(degrees > 90)
-    {
-     return "It's way too hot!";
-    }else if(degrees > 62){
-      return "Its a perfect day to be out.";
-    }else{
-      return "Its a way too cold";
-    }
+   int celsius = ( degrees - 32 )*5/9;
+   return celsius;
   }
-
-
+  
 
 }
